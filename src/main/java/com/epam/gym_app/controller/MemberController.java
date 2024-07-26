@@ -26,23 +26,11 @@ public class MemberController {
         return "members";
     }
 
-//    // API endpoint to add a member
-//    @PostMapping("/members")
-//    @ResponseBody
-//    public String addMember(@RequestBody String username, Model model) {
-//        memberService.addMember(username);
-//        List<Member> members = memberService.getMembers();
-//        model.addAttribute("members", members);
-//        return "members";
-//    }
-
     @PostMapping("/members")
     @ResponseBody
     public void addMember(@RequestParam String username) {
         memberService.addMember(username);
-
     }
-
 
     // API endpoint to delete a member
     @DeleteMapping("/members/{id}")
