@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TestController {
     @GetMapping("/test")
     public String testPage() {
-        return "test"; // Name of the Thymeleaf template
+        return "test";
     }
 }

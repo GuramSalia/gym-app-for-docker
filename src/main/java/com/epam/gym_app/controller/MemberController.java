@@ -13,42 +13,33 @@ import java.util.List;
 @Slf4j
 @Controller
 public class MemberController {
-
-    private final MemberService memberService;
-
-    @Autowired
-    public MemberController(MemberService memberService) {this.memberService = memberService;}
-
-    @GetMapping("/members")
-    public String membersPage(Model model) {
-        List<Member> members = memberService.getMembers();
-        model.addAttribute("members", members);
-        return "members";
-    }
-
-//    // API endpoint to add a member
-//    @PostMapping("/members")
-//    @ResponseBody
-//    public String addMember(@RequestBody String username, Model model) {
-//        memberService.addMember(username);
+//
+//    private final MemberService memberService;
+//
+//    @Autowired
+//    public MemberController(MemberService memberService) {this.memberService = memberService;}
+//
+//    @GetMapping("/members")
+//    public String membersPage(Model model) {
 //        List<Member> members = memberService.getMembers();
 //        model.addAttribute("members", members);
 //        return "members";
 //    }
-
-    @PostMapping("/members")
-    @ResponseBody
-    public void addMember(@RequestParam String username) {
-        memberService.addMember(username);
-
-    }
-
-
-    // API endpoint to delete a member
-    @DeleteMapping("/members/{id}")
-    @ResponseBody
-    public void deleteMember(@PathVariable String id) {
-        log.info("PathVariable: {}", id);
-        memberService.deleteMember(id);
-    }
+//
+//
+//    @PostMapping("/members")
+//    @ResponseBody
+//    public void addMember(@RequestParam String username) {
+//        memberService.addMember(username);
+//
+//    }
+//
+//
+//    // API endpoint to delete a member
+//    @DeleteMapping("/members/{id}")
+//    @ResponseBody
+//    public void deleteMember(@PathVariable String id) {
+//        log.info("PathVariable: {}", id);
+//        memberService.deleteMember(id);
+//    }
 }
